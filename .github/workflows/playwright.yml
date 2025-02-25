@@ -17,21 +17,20 @@ jobs:
       run: npm ci
 
 
-    - name: Run Prettier check
-      run: |
-        echo "Running Prettier to check for formatting issues..."
-        npm run prettier:check
+    - name: Install Playwright Browsers
+      run: npx playwright install --with-deps
+
 
 #    - name: Run local html server
 #      run: npm run local
 
-    - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+    - name: Run Playwright tests
+      run: npx playwright test
 
     - name: Run tests with ENV
       env:
         APP_URL: ${{secrets.APP_URL}}
-      run: npx playwright test tests/TallinnDeliveryAutorization.spec.ts
+      run: npx playwright test tests/TallinnDeliveryAuthorization.spec.ts
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}

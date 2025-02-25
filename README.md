@@ -7,4 +7,4 @@ Configure the secret `APP_URL` in the repository settings.
 'npm run dev'
 'npx playwright test'
  # Run with ENV in console
-'APP_URL=https://fe-delivery.tallinn-learning.ee/signin npx playwright test TallinnDeliveryAutorization.spec.ts --debug --project=chromium'
+'APP_URL=https://fe-delivery.tallinn-learning.ee/signin npx playwright test TallinnDeliveryAuthorization.spec.ts --debug --project=chromium'
