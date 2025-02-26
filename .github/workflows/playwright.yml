@@ -24,9 +24,6 @@ jobs:
 #    - name: Run local html server
 #      run: npm run local
 
-    - name: Run Playwright tests
-      run: npx playwright test
-
     - name: Run tests with ENV
       env:
         APP_URL: ${{secrets.APP_URL}}
